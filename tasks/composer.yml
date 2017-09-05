@@ -1,0 +1,19 @@
+---
+- name: composer | check
+  stat: "path=/usr/local/bin/composer"
+  register: composer_bin
+
+- name: composer | download
+  get_url:
+    url: https://getcomposer.org/installer
+    dest: /tmp/composer-installer.php
+    mode: 0755
+  when: not composer_bin.stat.exists
+
+- name: composer | install
+  command: >
+    php composer-installer.php --install-dir=/usr/local/bin --filename=composer
+    chdir=/tmp
+  when: not composer_bin.stat.exists
+
+

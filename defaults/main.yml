@@ -1,0 +1,12 @@
+---
+# defaults file
+app_engine: Filesystem
+
+project_name: "random-photo"
+project_destination_folder: "/var/www/{{ project_name }}"
+
+nginx_user: "www-data"
+nginx_group: "www-data"
+nginx_root: "{{ project_destination_folder -}}/web"
+nginx_server_name: "{{ project_name }}"
+nginx_port: 9000

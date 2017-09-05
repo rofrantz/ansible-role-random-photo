@@ -1,0 +1,9 @@
+---
+- name: npm | install npm
+  apt: pkg=npm state=latest
+
+- name: npm | create nodejs symlink
+  file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
+
+- name: npm | install bower
+  command: npm install -g bower creates=/usr/local/lib/node_modules/bower

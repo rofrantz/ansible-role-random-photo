@@ -1,0 +1,18 @@
+---
+- name: nginx
+  apt: pkg=nginx state=latest
+
+- name: nginx | install app site
+  template:
+    src:  "nginx/app.conf"
+    dest: "/etc/nginx/sites-available/{{ project_name }}.conf"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: nginx | enable app site
+  file:
+    src:  "/etc/nginx/sites-available/{{ project_name }}.conf"
+    dest: "/etc/nginx/sites-enabled/{{ project_name }}.conf"
+    state: link
+  notify: restart nginx

@@ -1,0 +1,21 @@
+---
+
+- name: Test role
+  hosts: "{{hosts_group|default('all')}}"
+
+  vars:
+    app_photo_path: /tmp
+
+  roles:
+    - role: rofrantz.random-photo
+      tags:
+        - build
+        - random-photo
+
+  post_tasks:
+    - name: "Check if nginx is running"
+      service:
+        state: started
+        name: nginx
+      tags:
+        - assert

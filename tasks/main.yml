@@ -1,0 +1,9 @@
+---
+# tasks file for role
+
+- name: Install require packages
+  include: ubuntu_packages.yml
+  when: ansible_distribution == "Ubuntu"
+
+- include: tasks/app.yml
+
