@@ -1,6 +1,6 @@
 Random Photo w/Ansible 
 =========
-[![Ansible Role](https://img.shields.io/ansible/role/16391.svg)](https://galaxy.ansible.com/rofrantz/random-photo/)
+[![Ansible Role](https://img.shields.io/ansible/role/20265.svg)](https://galaxy.ansible.com/rofrantz/random-photo/)
 [![Build Status](https://travis-ci.org/rofrantz/ansible-role-random-photo.svg?branch=master)](https://travis-ci.org/rofrantz/ansible-role-random-photo)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://galaxy.ansible.com/rofrantz/random-photo/)
 
