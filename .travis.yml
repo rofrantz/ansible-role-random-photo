@@ -44,7 +44,7 @@ script:
   # TODO fix operations app.yml which change the permissions and forces us to put chanhed=1
   - >
     ansible-playbook -i tests/vagrant/inventory tests/vagrant/test.yml --connection=local --sudo
-    | grep -q 'changed=1.*failed=0'
+    | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 
