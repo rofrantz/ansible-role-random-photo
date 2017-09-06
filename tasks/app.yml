@@ -4,7 +4,6 @@
   git:
     repo: "https://github.com/rofrantz/random-photo"
     dest: "{{ project_destination_folder }}"
-    force: true
 
 - name: app | install config.ini
   template:
@@ -28,4 +27,3 @@
     owner: "{{ nginx_user }}"
     group: "{{ nginx_group }}"
     recurse: yes
-    mode: 0644
