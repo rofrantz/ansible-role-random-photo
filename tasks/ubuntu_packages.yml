@@ -1,3 +1,10 @@
+- name: Update update and install required packages package
+  apt:
+    name: git
+    state: latest
+    update_cache: yes
+  when: ansible_distribution_version == "14.04"
+
 - include: php.yml
 - include: composer.yml
 - include: npm.yml

@@ -1,4 +1,9 @@
 ---
+- name: php | add repo
+  apt_repository:
+    repo: ppa:ondrej/php
+  when: ansible_distribution_version == "14.04"
+
 - name: php | extensions
   apt: pkg={{ item }} state=latest update_cache=yes
   with_items:
